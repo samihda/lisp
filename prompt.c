@@ -1,19 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-#define MAX_INPUT 2048
-
-static char input[MAX_INPUT];
+/* https://tiswww.case.edu/php/chet/readline/rltop.html */
+#include <readline/readline.h>
+#include <readline/history.h>
 
 int main()
 {
   puts("Ctrl+C to exit\n");
 
   while (1) {
-    fputs("lisp> ", stdout);
+    char* input = readline("lisp> ");
 
-    fgets(input, MAX_INPUT, stdin);
+    add_history(input);
 
-    printf("%s", input);
+    printf("%s\n", input);
+
+    free(input);
   }
 
   return 0;
