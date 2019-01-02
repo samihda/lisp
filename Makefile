@@ -1,7 +1,10 @@
+FLAGS = -std=c99 -Wall
+DEPS = -lreadline
+
 default: build
 
 build:
-	cc -std=c99 -Wall src/main.c -lreadline -o lisp
+	cc $(FLAGS) src/main.c $(DEPS) -o lisp
 
 run: build
 	./lisp
