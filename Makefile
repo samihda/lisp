@@ -8,3 +8,6 @@ build:
 
 run: build
 	./lisp
+
+clean:
+	rm lisp
