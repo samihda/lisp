@@ -4,7 +4,7 @@ DEPS = -lreadline
 default: build
 
 build:
-	cc $(FLAGS) src/main.c $(DEPS) -o lisp
+	cc $(FLAGS) src/main.c src/mpc.c $(DEPS) -o lisp
 
 run: build
 	./lisp
